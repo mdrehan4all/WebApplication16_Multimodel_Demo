@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    if (TempData["Message"] != null)
+    {
+        <h1>@TempData["Message"]</h1>
+    }
+}
+
+<div class="text-center">
+    <form action="Home/Search" method="GET">
+        <input type="text" name="id" class="form-control"/>
+        <input type="submit" value="Search" class="btn btn-primary mt-2" />
+    </form>
+</div>

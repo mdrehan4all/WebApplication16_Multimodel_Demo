@@ -1,0 +1,73 @@
+﻿@model WebApplication16_Multimodel_Demo.Models.ViewModels.CourseWiseStudent;
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                CourseId
+            </th>
+            <th>
+                CourseName
+            </th>
+            <th>
+                CourseDuration
+            </th>
+            <th>
+                CourseFee
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Model.crsDetails.CourseId
+            </td>
+            <td>
+                @Model.crsDetails.CourseName
+            </td>
+            <td>
+                @Model.crsDetails.CourseDuration
+            </td>
+            <td>
+                @Model.crsDetails.CourseFee
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h1>Student Details</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <td>stuId</td>
+            <td>stuName</td>
+            <td>stuGender</td>
+            <td>stuDob</td>
+            <td>stuPhone</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stu in Model.stuDetails)
+        {
+            <tr>
+                <td>@stu.StuId</td>
+                <td>@stu.StuName</td>
+                <td>@stu.StuGender</td>
+                <td>@stu.StuDob</td>
+                <td>@stu.StuPhone</td>
+        </tr>
+        }
+    </tbody>
+</table>
